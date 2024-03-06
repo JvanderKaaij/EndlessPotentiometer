@@ -8,9 +8,9 @@
 class EndlessPotentiometer {
 public:
   enum Direction {
-    NOT_MOVING,
-    CLOCKWISE,
-    COUNTER_CLOCKWISE
+    COUNTER_CLOCKWISE = -1,
+    NOT_MOVING = 0,
+    CLOCKWISE = 1,
   };
 
   bool isMoving;

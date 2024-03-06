@@ -70,7 +70,7 @@ void EndlessPotentiometer::updateValues(int valueA, int valueB) {
   // Record the change.
   // Avoid values around zero and max as value has flat region. Instead use
   // the values in between which are more predictable and linear.
-  if (dirA != NOT_MOVING && dirB != NOT_MOVING) {
+   if (dirA != 0 && dirB != 0) {
     if ((valueA < adcMaxValue*0.8) && (valueA > adcMaxValue*0.2)) {
       valueChanged = direction*abs(valueA - previousValueA)/sensitivity;
     } else {
@@ -99,4 +99,5 @@ int EndlessPotentiometer::getValue(int value) {
 
     return value;
   }
+  return 0;
 }
